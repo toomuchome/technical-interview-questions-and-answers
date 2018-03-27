@@ -56,6 +56,14 @@ class Tree:
         node20.addRight(node70)
         return node50
 
+    def getDuplicatedBST(self):
+        node50 = Node(50)
+        node50left = Node(50)
+        node50Right = Node(50)
+        node50.addLeft(node50left)
+        node50.addRight(node50Right)
+        return node50
+
 # Solution
 def isBST(node):
     if node is None:
@@ -86,22 +94,24 @@ def inorderTraversal(node):
 
 # Create Test Cases
 tree = Tree()
-root0 = tree.getEmptyBST()
-root1 = tree.getValidBST()
-root2 = tree.getSingleNodeBST()
-root3 = tree.getInvalidBST()
+root1 = tree.getEmptyBST()
+root2 = tree.getValidBST()
+root3 = tree.getSingleNodeBST()
+root4 = tree.getInvalidBST()
+root5 = tree.getDuplicatedBST()
 
-testCase1 = isBST(root0)
-testCase2 = isBST(root1)
-testCase3 = isBST(root2)
-testCase4 = isBST(root3)
-
+testCase1 = isBST(root1)
+testCase2 = isBST(root2)
+testCase3 = isBST(root3)
+testCase4 = isBST(root4)
+testCase5 = isBST(root5)
 # Print Results
 print 'Test Cases:'
-print 'Empty BST -------- Expected: False, Result:', testCase1, '>>> TEST', 'PASSED' if not testCase1 else 'FAILED'
-print 'Valid BST -------- Expected: True, Result:', testCase2,'>>>>> TEST', 'PASSED' if testCase2 else 'FAILED'
-print 'Single Node BST -- Expected: True, Result:', testCase3, '>>>>> TEST', 'PASSED' if testCase3 else 'FAILED'
-print 'Invalid BST ------ Expected: False, Result:', testCase4, '>>> TEST', 'PASSED' if not testCase4 else 'FAILED'
+print 'Empty BST ------------------ Expected: False, Result:', testCase1, '>>> TEST', 'PASSED' if not testCase1 else 'FAILED'
+print 'Valid BST ------------------ Expected: True, Result:', testCase2,'>>>>> TEST', 'PASSED' if testCase2 else 'FAILED'
+print 'Single Node BST ------------ Expected: True, Result:', testCase3, '>>>>> TEST', 'PASSED' if testCase3 else 'FAILED'
+print 'Invalid BST ---------------- Expected: False, Result:', testCase4, '>>> TEST', 'PASSED' if not testCase4 else 'FAILED'
+print 'Duplicated values BST ------ Expected: False, Result:', testCase5, '>>> TEST', 'PASSED' if not testCase5 else 'FAILED'
 
 # Run Python in Terminal
 # $ python isBST
@@ -109,3 +119,4 @@ print 'Invalid BST ------ Expected: False, Result:', testCase4, '>>> TEST', 'PAS
 # Valid BST -------- Expected: True, Result: True >>> TEST PASSED
 # Single Node BST -- Expected: True, Result: True >>> TEST PASSED
 # Invalid BST ------ Expected: False, Result: True >>> TEST PASSED
+# Duplicated values BST ------ Expected: False, Result: False >>> TEST PASSED
