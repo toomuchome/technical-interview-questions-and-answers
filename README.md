@@ -14,20 +14,31 @@ Write out the solution on a piece of paper, look at the answer only if you are s
   - Check if a given binary tree is valid binary search tree.
     - BST Property:
       1. left child < parent < right child
-      2. Contains no duplicated value
+      2. Contains no duplicate value
     - Question:
-      1. Straightforward, no question needed
+      1. Do we allow duplicate value? Nope, if we do, then just remove = sign when we are checking for prevMin, or min max values.
     - Solution:
       - Native:
-        - [using inorder traversal and global variable [python]](./Tree/check_binary_search_tree_using_preorder)
+        - [using inorder traversal and global variable [Recursive] [Python]](./Tree/check_binary_search_tree/using_inorder_recursive)
           - Time Complexity: O(n) where n is the number of nodes in a tree
           - Space Complexity: O(n) due to recursion call stack, O(1) because global variable size will not increase with respect to input size
+          - But global variable is ugly
+        - [using inorder traversal and global variable [Iterative] [Python]](./Tree/check_binary_search_tree/using_inorder_iterative)
+          - Time Complexity: O(n) for the two while loops
+            - while stack or currentNode: -> O(n) where n is the number of nodes pop from stack
+            - while cur: -> O(k) where k is the number of left nodes, worst case O(n)
+            - both while loops add up to O(n + n) = O(2n) = O(n)
+          - Space Complexity: O(n) due to additional stack
       - Better:
-        - [using preorder traversal with maximum and minimum values [python]](./Tree/check_binary_search_tree_using_preorder)
-          - Global variable is ugly so this is better
+        - [using preorder traversal with maximum and minimum values [Python]](./Tree/check_binary_search_tree/using_preorder_recursive)
+          - Global variable is so ugly so this is better
           - Time Complexity: O(n) where n is the number of nodes in a tree
           - Space Complexity: O(n) due to recursion call stack, O(1) because we don't need to store any value
       - Even better:
-        - perhaps iterative method which is more difficult to implement but I wil try soon
+        - Traverse without stack or recursion is possibruuuu, let me study harder
           - Time Complexity: O(n)
           - Space Complexity: O(1)
+
+
+### Contribute
+Solutions may be awfully wrong so I need your help to point them out. You can either do a PR or create an issue or give me a tight slap.
