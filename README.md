@@ -11,7 +11,7 @@ Write out the solution on a piece of paper, look at the answer only if you are s
 
 ### Directory
 - [Tree](./Tree)
-  - Check if a given binary tree is valid binary search tree.
+  - Check if a given binary tree is a valid binary search tree.
     - BST Property:
       1. left child < parent < right child
       2. Contains no duplicate value
