@@ -48,12 +48,12 @@ class Tree:
         node10 = Node(10)
         node20 = Node(20)
         node50 = Node(50)
-        node70 = Node(70)
+        node25 = Node(25)
         node100 = Node(100)
         node50.addLeft(node20)
         node50.addRight(node100)
         node20.addLeft(node10)
-        node20.addRight(node70)
+        node10.addRight(node25)
         return node50
 
     def getDuplicatedBST(self):
@@ -79,7 +79,8 @@ def inorderTraversal(node):
     if node is None:
         return True
 
-    inorderTraversal(node.left)
+    if not inorderTraversal(node.left):
+        return False
 
     global prevMin
 
@@ -88,9 +89,7 @@ def inorderTraversal(node):
 
     prevMin = node.value
 
-    inorderTraversal(node.right)
-
-    return True
+    return inorderTraversal(node.right)
 
 # Create Test Cases
 tree = Tree()
@@ -99,12 +98,12 @@ root2 = tree.getValidBST()
 root3 = tree.getSingleNodeBST()
 root4 = tree.getInvalidBST()
 root5 = tree.getDuplicatedBST()
-
 testCase1 = isBST(root1)
 testCase2 = isBST(root2)
 testCase3 = isBST(root3)
 testCase4 = isBST(root4)
 testCase5 = isBST(root5)
+
 # Print Results
 print 'Test Cases:'
 print 'Empty BST ------------------ Expected: False, Result:', testCase1, '>>> TEST', 'PASSED' if not testCase1 else 'FAILED'
