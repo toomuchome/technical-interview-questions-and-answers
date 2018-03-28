@@ -5,7 +5,7 @@ Write out the solution on a piece of paper, look at the answer only if you are s
 
 ### Steps
 1. Ask questions to define the scope - look out for edge cases such as validity or size of inputs
-2. Give a native solution - heck the time and space complexity, test your code
+2. Give a naive solution - heck the time and space complexity, test your code
 3. Give a better solution - cannot heck the time and space complexity, test your code
 4. Optimise the solution if possible
 
@@ -18,7 +18,7 @@ Write out the solution on a piece of paper, look at the answer only if you are s
     - Question:
       1. Do we allow duplicate value? Nope, if we do, then just remove = sign when we are checking for prevMin, or min max values.
     - Solution:
-      - Native:
+      - Naive:
         - [using inorder traversal and global variable [Recursive] [Python]](./Tree/check_for_valid_binary_search_tree/using_inorder_recursive)
           - Time Complexity: O(n) where n is the number of nodes in a tree
           - Space Complexity: O(n) due to recursion call stack, O(1) because global variable size will not increase with respect to input size
