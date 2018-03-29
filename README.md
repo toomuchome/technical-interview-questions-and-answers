@@ -15,7 +15,7 @@ Write out the solution on a piece of paper, look at the answer only if you are s
     - BST Property:
       1. left child < parent < right child
       2. Contains no duplicate value
-    - Question:
+    - Ask Question:
       1. Do we allow duplicate value? Nope, if we do, then just remove = sign when we are checking for prevMin, or min max values.
     - Solution:
       - Naive:
@@ -38,6 +38,23 @@ Write out the solution on a piece of paper, look at the answer only if you are s
         - Traverse without stack or recursion is possibruuuu, let me study harder
           - Time Complexity: O(n)
           - Space Complexity: O(1)
+
+- [Array](./Array)
+  - Get median of 2 sorted arrays
+  - Median property:
+    - Middle number
+    - Given an odd number array: [1, 2, 3], median is 2
+    - Given an even number array: [1, 2, 3, 4], median is averge of 2 + 3
+  - Ask Question:
+    - Nah.
+  - Solution:
+      - Naive:
+        - [merge 2 sorted arrays, sort again, then get the middle value [Python]](./Array/getMedianOf2SortedArrays)
+        - Time Complexity: O(klogk) where k is the total length of two arrays
+        - Space Complexity: O(k)
+### Programming Language
+- [Python](./Python)
+  - [Recursion](./Python/recursion.py)
 
 
 ### Contribute
